@@ -18,7 +18,7 @@ const TIKTOK_URL = "https://www.tiktok.com/";
 function Button({ children, className = "", variant = "default", type = "button", ...props }) {
   const base = "inline-flex items-center justify-center rounded-2xl px-5 py-3 text-sm font-bold transition focus:outline-none focus:ring-2 focus:ring-blue-900 focus:ring-offset-2";
   const styles = variant === "outline"
-    ? "border border-slate-300 bg-white text-white hover:bg-slate-100"
+    ? "border border-slate-300 bg-white text-slate-950 hover:bg-slate-100"
     : "bg-slate-950 text-white hover:bg-blue-900";
   return <button type={type} className={`${base} ${styles} ${className}`} {...props}>{children}</button>;
 }
@@ -68,7 +68,7 @@ function runSelfTests() {
 if (typeof window !== "undefined") runSelfTests();
 
 function SocialIcon({ label, href }) {
-  return <a aria-label={label} title={label} href={href} target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-900/85 text-sm font-black text-white transition hover:bg-[#D4AF37] hover:text-white">{label.charAt(0)}</a>;
+  return <a aria-label={label} title={label} href={href} target="_blank" rel="noreferrer" className="flex h-10 w-10 items-center justify-center rounded-full bg-white/10 text-sm font-black text-white transition hover:bg-[#D4AF37] hover:text-slate-950">{label.charAt(0)}</a>;
 }
 
 function CalendlyEmbed() {
@@ -84,7 +84,7 @@ function CalendlyEmbed() {
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#081225] via-[#0F172A] to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-blue-50 text-slate-950">
       <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <a href="#home" className="flex items-center gap-3">
@@ -116,8 +116,8 @@ export default function App() {
           <div className="mx-auto grid max-w-7xl items-center gap-12 md:grid-cols-2">
             <motion.div initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
               <div className="mb-5 inline-flex items-center gap-2 rounded-full border bg-white px-4 py-2 text-sm font-medium text-blue-700 shadow-sm"><CheckCircle size={16} /> Professional services for modern growth</div>
-              <h1 className="text-4xl font-extrabold leading-tight tracking-tight drop-shadow-2xl md:text-6xl">Helping people and businesses grow through coaching, training, ecommerce, and smart solutions.</h1>
-              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-200">J-LEE FANTASY SERVICES LLC provides business coaching, logistics support, ecommerce guidance, AI certification, workplace safety training, credit management, and more.</p>
+              <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">Helping people and businesses grow through coaching, training, ecommerce, and smart solutions.</h1>
+              <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">J-LEE FANTASY SERVICES LLC provides business coaching, logistics support, ecommerce guidance, AI certification, workplace safety training, credit management, and more.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <LinkButton href="#booking" className="bg-blue-700 px-7 py-6 text-base hover:bg-blue-800">Book an Appointment <ArrowRight className="ml-2" size={18} /></LinkButton>
                 <LinkButton href="#services" variant="outline" className="px-7 py-6 text-base">Explore Services</LinkButton>
@@ -130,7 +130,7 @@ export default function App() {
                     <div>
                       <img src="/logo.png" alt="J-LEE Logo" className="mx-auto mb-5 h-40 w-auto rounded-3xl bg-white/95 p-2 shadow-2xl" />
                       <h2 className="text-4xl font-bold">Your Growth Partner</h2>
-                      <p className="mt-4 text-lg text-white">Coaching • Ecommerce • Logistics • AI • Safety • Credit</p>
+                      <p className="mt-4 text-lg text-white/90">Coaching • Ecommerce • Logistics • AI • Safety • Credit</p>
                     </div>
                   </div>
                 </CardContent>
@@ -142,9 +142,9 @@ export default function App() {
         <section id="services" className="px-6 py-16">
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <p className="font-bold text-[#D4AF37]">Our Services</p>
+              <p className="font-bold text-[#B8860B]">Our Services</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Premium solutions for growth, success, and execution</h2>
-              <p className="mt-4 text-slate-200">Built for small business owners, Amazon and TikTok sellers, logistics companies, young entrepreneurs, students, corporate clients, and individuals needing credit support.</p>
+              <p className="mt-4 text-slate-700">Built for small business owners, Amazon and TikTok sellers, logistics companies, young entrepreneurs, students, corporate clients, and individuals needing credit support.</p>
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {services.map((service, index) => {
@@ -155,7 +155,7 @@ export default function App() {
                       <CardContent className="p-7">
                         <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-900 to-slate-950 p-3 text-[#D4AF37]"><Icon size={25} /></div>
                         <h3 className="text-xl font-black">{service.title}</h3>
-                        <p className="mt-3 leading-7 text-slate-200">{service.description}</p>
+                        <p className="mt-3 leading-7 text-slate-700">{service.description}</p>
                       </CardContent>
                     </Card>
                   </motion.div>
@@ -168,10 +168,10 @@ export default function App() {
         <section id="about" className="bg-white px-6 py-16">
           <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-2">
             <div>
-              <p className="font-bold text-[#D4AF37]">About J-LEE</p>
+              <p className="font-bold text-[#B8860B]">About J-LEE</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Built from leadership, operations, safety, technology, and vision.</h2>
             </div>
-            <div className="text-lg leading-8 text-slate-200">
+            <div className="text-lg leading-8 text-slate-700">
               <p>J-LEE FANTASY SERVICES LLC was created because the world is evolving, and technology and ecommerce are in high demand. With experience as an Amazon WHS Specialist and Operations Manager, our founder brings real-world leadership, safety, operations, and business execution experience to help others grow while creating services that generate income and serve people.</p>
               <p className="mt-5">What makes J-LEE different is vision, leadership principles, and a commitment to helping the future generation build confidence, opportunity, and success.</p>
             </div>
@@ -184,16 +184,16 @@ export default function App() {
               <div>
                 <p className="font-bold text-[#D4AF37]">AI Academy</p>
                 <h2 className="mt-2 text-3xl font-black md:text-4xl">Learn AI. Earn certificates. Build future-ready skills.</h2>
-                <p className="mt-4 text-slate-100">The AI Academy will offer video courses, quizzes, certifications, and private member access designed for students, entrepreneurs, workers, and business owners.</p>
+                <p className="mt-4 text-slate-200">The AI Academy will offer video courses, quizzes, certifications, and private member access designed for students, entrepreneurs, workers, and business owners.</p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <LinkButton href={EMAIL_URL} className="bg-[#D4AF37] text-white hover:bg-yellow-300">Request Course Info</LinkButton>
-                  <LinkButton href={WHATSAPP_URL} external variant="outline">Chat on WhatsApp</LinkButton>
+                  <LinkButton href={EMAIL_URL} className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Request Course Info</LinkButton>
+                  <LinkButton href={WHATSAPP_URL} external className="bg-white text-slate-950 hover:bg-slate-100">Chat on WhatsApp</LinkButton>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {courseFeatures.map((feature) => {
                   const Icon = feature.icon;
-                  return <div key={feature.title} className="rounded-3xl bg-slate-900/85 p-5 backdrop-blur-sm"><Icon className="mb-3 text-[#D4AF37]" size={28} /><p className="font-bold">{feature.title}</p></div>;
+                  return <div key={feature.title} className="rounded-3xl bg-white/10 p-5 backdrop-blur-sm"><Icon className="mb-3 text-[#D4AF37]" size={28} /><p className="font-bold">{feature.title}</p></div>;
                 })}
               </div>
             </div>
@@ -204,17 +204,17 @@ export default function App() {
           <div className="mx-auto max-w-7xl">
             <div className="grid items-center gap-10 lg:grid-cols-2">
               <div>
-                <p className="font-bold text-[#D4AF37]">Ecommerce Store</p>
+                <p className="font-bold text-[#B8860B]">Ecommerce Store</p>
                 <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">A future-ready online store for products, services, courses, and memberships.</h2>
-                <p className="mt-4 text-slate-200">The platform will be designed to sell physical products, digital courses, consulting packages, and memberships while connecting with TikTok Shop and Shopify.</p>
+                <p className="mt-4 text-slate-700">The platform will be designed to sell physical products, digital courses, consulting packages, and memberships while connecting with TikTok Shop and Shopify.</p>
                 <div className="mt-6 flex flex-wrap gap-3">{storeTags.map((item) => <span key={item} className="rounded-full border border-slate-200 bg-slate-50 px-4 py-2 text-sm font-bold text-slate-700">{item}</span>)}</div>
               </div>
               <Card className="border-0 bg-gradient-to-br from-blue-900 to-slate-950 text-white shadow-2xl">
                 <CardContent className="p-8">
                   <Store className="mb-5 text-[#D4AF37]" size={48} />
                   <h3 className="text-2xl font-black">Product Showcase Coming Soon</h3>
-                  <p className="mt-3 text-slate-100">Featured products, courses, and service packages will appear here.</p>
-                  <LinkButton href="#pricing" className="mt-6 bg-[#D4AF37] text-white hover:bg-yellow-300">View Service Packages</LinkButton>
+                  <p className="mt-3 text-slate-200">Featured products, courses, and service packages will appear here.</p>
+                  <LinkButton href="#pricing" className="mt-6 bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">View Service Packages</LinkButton>
                 </CardContent>
               </Card>
             </div>
@@ -224,22 +224,22 @@ export default function App() {
         <section id="pricing" className="px-6 py-16">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
-              <p className="font-bold text-[#D4AF37]">Service Packages</p>
+              <p className="font-bold text-[#B8860B]">Service Packages</p>
               <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Flexible ways to work with us</h2>
-              <p className="mx-auto mt-4 max-w-2xl text-slate-200">Choose a starting package or request a custom quote based on your business needs.</p>
+              <p className="mx-auto mt-4 max-w-2xl text-slate-700">Choose a starting package or request a custom quote based on your business needs.</p>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
               {packages.map((pkg) => (
-                <Card key={pkg.name} className={`relative border shadow-lg ${pkg.featured ? "border-yellow-400 shadow-2xl" : "border-slate-100"}`}>
-                  {pkg.featured && <div className="absolute right-5 top-5 rounded-full bg-yellow-400 px-3 py-1 text-xs font-black text-white">Popular</div>}
+                <Card key={pkg.name} className={`relative border shadow-lg ${pkg.featured ? "border-[#D4AF37] shadow-2xl" : "border-slate-100"}`}>
+                  {pkg.featured && <div className="absolute right-5 top-5 rounded-full bg-yellow-400 px-3 py-1 text-xs font-black text-slate-950">Popular</div>}
                   <CardContent className="p-7">
                     <h3 className="text-2xl font-black">{pkg.name}</h3>
                     <p className="mt-2 text-3xl font-black text-blue-900">{pkg.price}</p>
-                    <p className="mt-3 text-slate-200">{pkg.description}</p>
+                    <p className="mt-3 text-slate-700">{pkg.description}</p>
                     <div className="mt-6 space-y-3">
-                      {pkg.items.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-700"><CheckCircle className="mt-0.5 text-[#D4AF37]" size={18} /><span>{item}</span></div>)}
+                      {pkg.items.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-700"><CheckCircle className="mt-0.5 text-[#B8860B]" size={18} /><span>{item}</span></div>)}
                     </div>
-                    <LinkButton href="#booking" className={`mt-7 w-full ${pkg.featured ? "bg-[#D4AF37] text-white hover:bg-yellow-300" : ""}`}>Choose Package</LinkButton>
+                    <LinkButton href="#booking" className={`mt-7 w-full ${pkg.featured ? "bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]" : ""}`}>Choose Package</LinkButton>
                   </CardContent>
                 </Card>
               ))}
@@ -251,42 +251,42 @@ export default function App() {
         </section>
 
         <section id="booking" className="relative overflow-hidden px-6 py-20">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#081225] via-[#0F2D5C] to-black" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#07111F] via-[#0B2A55] to-[#05070A]" />
           <div className="absolute left-10 top-20 -z-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl" />
           <div className="absolute bottom-10 right-10 -z-10 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
 
           <div className="mx-auto max-w-7xl">
             <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mx-auto max-w-3xl text-center text-white">
-              <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37]/40 bg-slate-900/85 px-5 py-2 text-sm font-bold text-yellow-300 backdrop-blur"><Sparkles size={16} /> Luxury Booking Experience</div>
-              <h2 className="text-4xl font-black tracking-tight drop-shadow-2xl md:text-6xl">Schedule Your Consultation</h2>
-              <p className="mt-5 text-lg leading-8 text-slate-100">Choose the best time to discuss your business vision, ecommerce goals, AI training needs, logistics support, workplace safety training, or credit management plan.</p>
+              <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-[#D4AF37]/15 px-5 py-2 text-sm font-bold text-[#FFD966] backdrop-blur"><Sparkles size={16} /> Luxury Booking Experience</div>
+              <h2 className="text-4xl font-black tracking-tight text-white drop-shadow-2xl md:text-6xl">Schedule Your Consultation</h2>
+              <p className="mt-5 text-lg font-medium leading-8 text-white">Choose the best time to discuss your business vision, ecommerce goals, AI training needs, logistics support, workplace safety training, or credit management plan.</p>
             </motion.div>
 
             <div className="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
               <div className="space-y-5">
-                <Card className="border border-white/10 bg-slate-900/85 text-white shadow-2xl backdrop-blur">
+                <Card className="border border-white/10 bg-[#0B1220]/95 text-white shadow-2xl backdrop-blur border border-[#D4AF37]/30">
                   <CardContent className="p-7">
                     <CalendarDays className="mb-4 text-[#D4AF37]" size={40} />
                     <h3 className="text-2xl font-black">What to expect</h3>
-                    <div className="mt-5 space-y-4 text-slate-200">
+                    <div className="mt-5 space-y-4 font-medium text-white">
                       <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> A professional consultation based on your goals.</div>
                       <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> Clear recommendations for your next step.</div>
                       <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> Support for ecommerce, AI, logistics, safety, business, or credit needs.</div>
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="border border-white/10 bg-slate-900/85 text-white shadow-2xl backdrop-blur">
+                <Card className="border border-white/10 bg-[#0B1220]/95 text-white shadow-2xl backdrop-blur border border-[#D4AF37]/30">
                   <CardContent className="p-7">
                     <h3 className="text-xl font-black">Need help booking?</h3>
-                    <p className="mt-3 text-slate-100">You can also reach us directly by phone, WhatsApp, or email.</p>
+                    <p className="mt-3 text-slate-200">You can also reach us directly by phone, WhatsApp, or email.</p>
                     <div className="mt-5 flex flex-col gap-3">
-                      <LinkButton href={WHATSAPP_URL} external className="bg-[#D4AF37] text-white hover:bg-yellow-300">WhatsApp Us</LinkButton>
-                      <LinkButton href={EMAIL_URL} variant="outline">Email Us</LinkButton>
+                      <LinkButton href={WHATSAPP_URL} external className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">WhatsApp Us</LinkButton>
+                      <LinkButton href={EMAIL_URL} className="bg-white text-slate-950 hover:bg-slate-100">Email Us</LinkButton>
                     </div>
                   </CardContent>
                 </Card>
               </div>
-              <div className="rounded-[2rem] border border-[#D4AF37]/30 bg-slate-900/85 p-3 shadow-2xl backdrop-blur">
+              <div className="rounded-[2rem] border border-[#D4AF37]/20 bg-white/10 p-3 shadow-2xl backdrop-blur">
                 <CalendlyEmbed />
               </div>
             </div>
@@ -295,19 +295,19 @@ export default function App() {
 
         <section id="testimonials" className="bg-white px-6 py-16">
           <div className="mx-auto max-w-7xl text-center">
-            <p className="font-bold text-[#D4AF37]">Testimonials</p>
+            <p className="font-bold text-[#B8860B]">Testimonials</p>
             <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Client success stories will be featured here</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-slate-200">As J-LEE grows, this section will showcase reviews, business wins, course graduates, and client transformations.</p>
+            <p className="mx-auto mt-4 max-w-2xl text-slate-700">As J-LEE grows, this section will showcase reviews, business wins, course graduates, and client transformations.</p>
           </div>
         </section>
 
         <section id="contact" className="px-6 py-16">
-          <div className="mx-auto max-w-7xl rounded-[2rem] bg-gradient-to-br from-[#081225] via-[#0F2D5C] to-black p-8 text-white shadow-2xl md:p-12">
+          <div className="mx-auto max-w-7xl rounded-[2rem] bg-gradient-to-br from-[#07111F] via-[#0B2A55] to-[#05070A] p-8 text-white shadow-2xl md:p-12">
             <div className="grid gap-10 lg:grid-cols-2">
               <div>
                 <p className="font-bold text-[#D4AF37]">Contact</p>
                 <h2 className="mt-2 text-3xl font-black md:text-4xl">Ready to turn your vision into execution?</h2>
-                <p className="mt-4 text-slate-100">Book a consultation, request service information, join the AI Academy, or connect with us for ecommerce, logistics, safety, credit, and business growth solutions.</p>
+                <p className="mt-4 text-slate-200">Book a consultation, request service information, join the AI Academy, or connect with us for ecommerce, logistics, safety, credit, and business growth solutions.</p>
                 <div className="mt-6 flex gap-3"><SocialIcon label="Facebook" href={FACEBOOK_URL} /><SocialIcon label="Instagram" href={INSTAGRAM_URL} /><SocialIcon label="TikTok" href={TIKTOK_URL} /></div>
               </div>
               <div className="space-y-4 text-slate-200">
@@ -315,8 +315,8 @@ export default function App() {
                 <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#D4AF37]"><MessageCircle size={20} className="text-[#D4AF37]" /> WhatsApp: +1 786 762 5663</a>
                 <a href={EMAIL_URL} className="flex items-center gap-3 hover:text-[#D4AF37]"><Mail size={20} className="text-[#D4AF37]" /> info@jleefantasy.com</a>
                 <div className="flex items-center gap-3"><MapPin size={20} className="text-[#D4AF37]" /> 137 N Olympic Ave, Arlington, WA</div>
-                <div className="rounded-3xl bg-slate-900/85 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
-                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-white hover:bg-yellow-300">Book Now</LinkButton><LinkButton href={EMAIL_URL} variant="outline">Email Us</LinkButton></div>
+                <div className="rounded-3xl bg-white/10 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
+                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="bg-white text-slate-950 hover:bg-slate-100">Email Us</LinkButton></div>
               </div>
             </div>
           </div>
