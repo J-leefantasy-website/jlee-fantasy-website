@@ -1,8 +1,5 @@
 # J-LEE Fantasy Website
 
-Deploy-ready React + Vite + Tailwind website for **J-LEE FANTASY SERVICES LLC**.
+Deploy-ready React + Vite + Tailwind website with embedded Calendly luxury booking section.
 
-## Vercel Settings
-- Framework Preset: Vite
-- Build Command: npm run build
-- Output Directory: dist
+Calendly: https://calendly.com/j-lee-fantasy-services
