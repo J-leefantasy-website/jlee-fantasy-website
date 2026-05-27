@@ -43,8 +43,8 @@ const services = [
 ];
 
 const packages = [
-  { name: "Starter Consultation", price: "$149", description: "For individuals, new entrepreneurs, or first-time sellers.", items: ["1-on-1 discovery session", "Basic business direction", "Ecommerce recommendations", "AI tool introduction", "Credit improvement tips"] },
-  { name: "Professional Growth", price: "$499", description: "For growing entrepreneurs and ecommerce sellers ready to execute.", items: ["Business coaching session", "TikTok/Shopify/Amazon guidance", "Store setup roadmap", "Logistics/safety consultation", "Priority support"], featured: true },
+  { name: "Starter Consultation", price: "$50", description: "For individuals, new entrepreneurs, or first-time sellers.", items: ["1-on-1 discovery session", "Basic business direction", "Ecommerce recommendations", "AI tool introduction", "Credit improvement tips"] },
+  { name: "Professional Growth", price: "$199", description: "For growing entrepreneurs and ecommerce sellers ready to execute.", items: ["Business coaching session", "TikTok/Shopify/Amazon guidance", "Store setup roadmap", "Logistics/safety consultation", "Priority support"], featured: true },
   { name: "Elite Enterprise", price: "Custom", description: "For full business transformation, training, and long-term support.", items: ["Full strategy plan", "Advanced ecommerce support", "Team training", "AI integration planning", "VIP consulting"] },
 ];
 
@@ -143,7 +143,7 @@ export default function App() {
           <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
               <p className="font-bold text-[#B8860B]">Our Services</p>
-              <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Premium solutions for growth, success, and execution</h2>
+              <h2 className="mt-2 text-4xl font-black tracking-tight text-[#07111F] md:text-5xl">Premium solutions for growth, success, and execution</h2>
               <p className="mt-4 text-slate-700">Built for small business owners, Amazon and TikTok sellers, logistics companies, young entrepreneurs, students, corporate clients, and individuals needing credit support.</p>
             </div>
             <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -221,11 +221,11 @@ export default function App() {
           </div>
         </section>
 
-        <section id="pricing" className="px-6 py-16">
+        <section id="pricing" className="bg-white px-6 py-20">
           <div className="mx-auto max-w-7xl">
             <div className="text-center">
               <p className="font-bold text-[#B8860B]">Service Packages</p>
-              <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Flexible ways to work with us</h2>
+              <h2 className="mt-2 text-3xl font-black tracking-tight md:text-4xl">Simple, Transparent Pricing</h2>
               <p className="mx-auto mt-4 max-w-2xl text-slate-700">Choose a starting package or request a custom quote based on your business needs.</p>
             </div>
             <div className="mt-10 grid gap-6 lg:grid-cols-3">
@@ -325,7 +325,7 @@ export default function App() {
                       <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
                         Chat on WhatsApp
                       </LinkButton>
-                      <LinkButton href={EMAIL_URL} className="w-full border border-[#07111F] bg-white text-[#07111F] hover:bg-slate-100">
+                      <LinkButton href={EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-bold text-[#07111F] hover:bg-slate-100 shadow-sm">
                         Email Us
                       </LinkButton>
                     </div>
