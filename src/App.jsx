@@ -76,7 +76,7 @@ function CalendlyEmbed() {
     <iframe
       title="Schedule a consultation with J-LEE FANTASY SERVICES LLC"
       src={`${CALENDLY_URL}?hide_gdpr_banner=1&primary_color=0f2d5c`}
-      className="h-[900px] w-full rounded-[2rem] border-0 bg-white shadow-2xl"
+      className="h-[760px] w-full rounded-[1.25rem] border-0 bg-white"
       loading="lazy"
     />
   );
@@ -250,45 +250,108 @@ export default function App() {
           </div>
         </section>
 
-        <section id="booking" className="relative overflow-hidden px-6 py-20">
-          <div className="absolute inset-0 -z-10 bg-gradient-to-br from-[#07111F] via-[#0B2A55] to-[#05070A]" />
-          <div className="absolute left-10 top-20 -z-10 h-72 w-72 rounded-full bg-yellow-400/20 blur-3xl" />
-          <div className="absolute bottom-10 right-10 -z-10 h-80 w-80 rounded-full bg-blue-400/20 blur-3xl" />
+        <section id="booking" className="relative overflow-hidden bg-white px-6 py-20">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#FFF8E1_0%,#FFFFFF_38%,#F8FAFC_100%)]" />
+          <div className="absolute left-0 top-24 -z-10 h-px w-full bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
 
           <div className="mx-auto max-w-7xl">
-            <motion.div initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }} className="mx-auto max-w-3xl text-center text-white">
-              <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-[#D4AF37]/15 px-5 py-2 text-sm font-bold text-[#FFD966] backdrop-blur"><Sparkles size={16} /> Luxury Booking Experience</div>
-              <h2 className="text-4xl font-black tracking-tight text-white drop-shadow-2xl md:text-6xl">Schedule Your Consultation</h2>
-              <p className="mt-5 text-lg font-medium leading-8 text-white">Choose the best time to discuss your business vision, ecommerce goals, AI training needs, logistics support, workplace safety training, or credit management plan.</p>
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="mx-auto max-w-4xl text-center"
+            >
+              <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-white px-5 py-2 text-sm font-black uppercase tracking-wide text-[#B8860B] shadow-sm">
+                <Sparkles size={16} /> Luxury Booking Experience
+              </div>
+              <h2 className="text-4xl font-black uppercase tracking-tight text-[#07111F] md:text-6xl">
+                Schedule Your <span className="block bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#8B6508] bg-clip-text text-transparent">Consultation</span>
+              </h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg font-medium leading-8 text-slate-700">
+                Choose the best time to discuss your business vision, ecommerce goals, AI training needs,
+                logistics support, workplace safety training, or credit management plan.
+              </p>
             </motion.div>
 
-            <div className="mt-10 grid gap-8 lg:grid-cols-[0.8fr_1.2fr]">
+            <div className="mt-12 grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
               <div className="space-y-5">
-                <Card className="border border-white/10 bg-[#0B1220]/95 text-white shadow-2xl backdrop-blur border border-[#D4AF37]/30">
+                <Card className="overflow-hidden border border-slate-200 bg-white shadow-2xl">
+                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-5 text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/60 bg-[#D4AF37]/10">
+                      <CalendarDays className="text-[#D4AF37]" size={28} />
+                    </div>
+                    <h3 className="text-xl font-black uppercase tracking-wide">What to Expect</h3>
+                  </div>
                   <CardContent className="p-7">
-                    <CalendarDays className="mb-4 text-[#D4AF37]" size={40} />
-                    <h3 className="text-2xl font-black">What to expect</h3>
-                    <div className="mt-5 space-y-4 font-medium text-white">
-                      <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> A professional consultation based on your goals.</div>
-                      <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> Clear recommendations for your next step.</div>
-                      <div className="flex gap-3"><CheckCircle className="mt-1 text-[#D4AF37]" size={20} /> Support for ecommerce, AI, logistics, safety, business, or credit needs.</div>
+                    <div className="space-y-6 text-slate-800">
+                      <div className="flex gap-4">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
+                        <div>
+                          <p className="font-black text-[#07111F]">Professional Consultation</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">A professional consultation based on your specific goals and needs.</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
+                        <div>
+                          <p className="font-black text-[#07111F]">Clear Recommendations</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">Clear, actionable recommendations for your next steps.</p>
+                        </div>
+                      </div>
+                      <div className="flex gap-4">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
+                        <div>
+                          <p className="font-black text-[#07111F]">Comprehensive Support</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">Support for ecommerce, AI, logistics, safety, business, or credit needs.</p>
+                        </div>
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
-                <Card className="border border-white/10 bg-[#0B1220]/95 text-white shadow-2xl backdrop-blur border border-[#D4AF37]/30">
+
+                <Card className="overflow-hidden border border-slate-200 bg-white shadow-2xl">
+                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-5 text-white">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/60 bg-[#D4AF37]/10">
+                      <MessageCircle className="text-[#D4AF37]" size={28} />
+                    </div>
+                    <h3 className="text-xl font-black uppercase tracking-wide">Need Help Booking?</h3>
+                  </div>
                   <CardContent className="p-7">
-                    <h3 className="text-xl font-black">Need help booking?</h3>
-                    <p className="mt-3 text-slate-200">You can also reach us directly by phone, WhatsApp, or email.</p>
+                    <p className="text-base font-medium leading-7 text-slate-700">
+                      You can also reach us directly by phone, WhatsApp, or email.
+                    </p>
                     <div className="mt-5 flex flex-col gap-3">
-                      <LinkButton href={WHATSAPP_URL} external className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">WhatsApp Us</LinkButton>
-                      <LinkButton href={EMAIL_URL} className="bg-white text-slate-950 hover:bg-slate-100">Email Us</LinkButton>
+                      <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
+                        Chat on WhatsApp
+                      </LinkButton>
+                      <LinkButton href={EMAIL_URL} className="w-full border border-[#07111F] bg-white text-[#07111F] hover:bg-slate-100">
+                        Email Us
+                      </LinkButton>
                     </div>
                   </CardContent>
                 </Card>
               </div>
-              <div className="rounded-[2rem] border border-[#D4AF37]/20 bg-white/10 p-3 shadow-2xl backdrop-blur">
-                <CalendlyEmbed />
+
+              <div className="rounded-[2rem] border border-[#D4AF37] bg-[#07111F] p-4 shadow-2xl">
+                <div className="rounded-[1.5rem] bg-white p-3">
+                  <CalendlyEmbed />
+                </div>
               </div>
+            </div>
+
+            <div className="mt-10 grid gap-5 md:grid-cols-4">
+              {[
+                ["Secure & Confidential", "Your information is safe and protected."],
+                ["Flexible Scheduling", "Choose a time that works best for you."],
+                ["Expert Guidance", "Get personalized advice from business-focused support."],
+                ["Results Focused", "We focus on strategies that drive real results."],
+              ].map(([title, body]) => (
+                <div key={title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-lg">
+                  <p className="font-black text-[#07111F]">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </section>
