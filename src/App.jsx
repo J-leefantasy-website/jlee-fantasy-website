@@ -136,7 +136,7 @@ export default function App() {
           <div className="hidden items-center gap-3 md:flex">
             <LinkButton href={EMAIL_URL} className="px-6 py-4"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
             <LinkButton
-              href={pkg.link}
+              href="#booking"
               className="px-6 py-4"
             >
               <CalendarDays className="mr-2" size={18} /> Book Consultation
@@ -157,7 +157,7 @@ export default function App() {
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">Helping people and businesses grow through coaching, training, ecommerce, and smart solutions.</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">J-LEE FANTASY SERVICES LLC provides business coaching, logistics support, ecommerce guidance, AI certification, workplace safety training, credit management, and more.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <LinkButton href={pkg.link} className="px-7 py-6">Book an Appointment <ArrowRight className="ml-2" size={18} /></LinkButton>
+                <LinkButton href="#booking" className="px-7 py-6">Book an Appointment <ArrowRight className="ml-2" size={18} /></LinkButton>
                 <LinkButton href="#services" variant="outline" className="px-7 py-6">Explore Services</LinkButton>
               </div>
             </motion.div>
@@ -277,7 +277,18 @@ export default function App() {
                     <div className="mt-6 space-y-3">
                       {pkg.items.map((item) => <div key={item} className="flex items-start gap-2 text-sm text-slate-700"><CheckCircle className="mt-0.5 text-[#B8860B]" size={18} /><span>{item}</span></div>)}
                     </div>
-                    <LinkButton href={pkg.link} className={`mt-7 w-full ${pkg.featured ? "bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]" : ""}`}>{pkg.name === "Starter Consultation" ? "Book Starter Package" : pkg.name === "Professional Growth" ? "Book Professional Package" : "Request Custom Quote"}</LinkButton>
+                    <a
+                        href={pkg.link}
+                        target={pkg.link.startsWith("http") ? "_blank" : undefined}
+                        rel={pkg.link.startsWith("http") ? "noopener noreferrer" : undefined}
+                        className="inline-flex w-full items-center justify-center gap-2 rounded-2xl border-2 border-[#D4AF37] bg-[#07111F] px-6 py-3 text-sm font-black text-white shadow-md transition-all duration-300 hover:border-[#E6C35C] hover:bg-[#0B2A55] hover:shadow-xl"
+                      >
+                        {pkg.name === "Starter Consultation"
+                          ? "Book Starter Package"
+                          : pkg.name === "Professional Growth"
+                          ? "Book Professional Package"
+                          : "Request Custom Quote"}
+                      </a>
                   </CardContent>
                 </Card>
               ))}
@@ -401,7 +412,7 @@ export default function App() {
                 <div className="flex items-center gap-3"><CreditCard size={20} className="text-yellow-400" /> billing@jleefantasy.com</div>
                 <div className="flex items-center gap-3"><MapPin size={20} className="text-[#D4AF37]" /> 137 N Olympic Ave, Arlington, WA</div>
                 <div className="rounded-3xl bg-white/10 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
-                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href={pkg.link} className="">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="px-6 py-4"><Mail className="mr-2" size={18} /> Email Us</LinkButton></div>
+                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="px-6 py-4"><Mail className="mr-2" size={18} /> Email Us</LinkButton></div>
               </div>
             </div>
           </div>
