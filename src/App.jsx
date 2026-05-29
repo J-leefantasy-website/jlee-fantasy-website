@@ -9,7 +9,13 @@ import {
 const PHONE = "+17867625663";
 const EMAIL = "info@jleefantasy.com";
 const WHATSAPP_URL = "https://wa.me/17867625663";
-const EMAIL_URL = "mailto:info@jleefantasy.com?subject=Consultation Request - J-LEE Fantasy Services";
+const EMAIL_URL = "mailto:info@jleefantasy.com?subject=General Inquiry - J-LEE Fantasy Services";
+const BOOKING_EMAIL = "bookings@jleefantasy.com";
+const BOOKING_EMAIL_URL = "mailto:bookings@jleefantasy.com?subject=Booking Request - J-LEE Fantasy Services";
+const SUPPORT_EMAIL = "support@jleefantasy.com";
+const SUPPORT_EMAIL_URL = "mailto:support@jleefantasy.com?subject=Support Request - J-LEE Fantasy Services";
+const BILLING_EMAIL = "billing@jleefantasy.com";
+
 const CALENDLY_URL = "https://calendly.com/j-lee-fantasy-services";
 const FACEBOOK_URL = "https://www.facebook.com/";
 const INSTAGRAM_URL = "https://www.instagram.com/";
@@ -251,73 +257,57 @@ export default function App() {
         </section>
 
         <section id="booking" className="relative overflow-hidden bg-white px-6 py-20">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,#FFF8E1_0%,#FFFFFF_38%,#F8FAFC_100%)]" />
-          <div className="absolute left-0 top-24 -z-10 h-px w-full bg-gradient-to-r from-transparent via-[#D4AF37]/40 to-transparent" />
-
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#FFF7DF_0%,#FFFFFF_35%,#F8FAFC_100%)]" />
           <div className="mx-auto max-w-7xl">
-            <motion.div
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="mx-auto max-w-4xl text-center"
-            >
-              <div className="mx-auto mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-white px-5 py-2 text-sm font-black uppercase tracking-wide text-[#B8860B] shadow-sm">
-                <Sparkles size={16} /> Luxury Booking Experience
-              </div>
-              <h2 className="text-4xl font-black uppercase tracking-tight text-[#07111F] md:text-6xl">
-                Schedule Your <span className="block bg-gradient-to-r from-[#B8860B] via-[#D4AF37] to-[#8B6508] bg-clip-text text-transparent">Consultation</span>
-              </h2>
-              <p className="mx-auto mt-5 max-w-3xl text-lg font-medium leading-8 text-slate-700">
-                Choose the best time to discuss your business vision, ecommerce goals, AI training needs,
-                logistics support, workplace safety training, or credit management plan.
-              </p>
-            </motion.div>
+            <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.4fr]">
+              <motion.div
+                initial={{ opacity: 0, x: -24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+              >
+                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-white px-5 py-2 text-sm font-black uppercase tracking-wide text-[#B8860B] shadow-sm">
+                  <Sparkles size={16} /> Luxury Booking Experience
+                </div>
 
-            <div className="mt-12 grid gap-8 lg:grid-cols-[0.75fr_1.25fr]">
-              <div className="space-y-5">
-                <Card className="overflow-hidden border border-slate-200 bg-white shadow-2xl">
-                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-5 text-white">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/60 bg-[#D4AF37]/10">
-                      <CalendarDays className="text-[#D4AF37]" size={28} />
-                    </div>
-                    <h3 className="text-xl font-black uppercase tracking-wide">What to Expect</h3>
+                <h2 className="text-5xl font-black leading-tight tracking-tight text-[#07111F] md:text-6xl">
+                  Schedule Your <span className="block text-[#D4AF37]">Consultation</span>
+                </h2>
+
+                <p className="mt-5 max-w-xl text-lg font-medium leading-8 text-slate-700">
+                  Choose the best time to discuss your business vision, ecommerce goals, AI training needs,
+                  logistics support, workplace safety training, or credit management plan.
+                </p>
+
+                <Card className="mt-8 overflow-hidden border border-slate-200 bg-white shadow-xl">
+                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
+                    <CalendarDays className="text-[#D4AF37]" size={28} />
+                    <h3 className="text-lg font-black uppercase tracking-wide">What to Expect</h3>
                   </div>
-                  <CardContent className="p-7">
-                    <div className="space-y-6 text-slate-800">
-                      <div className="flex gap-4">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
-                        <div>
-                          <p className="font-black text-[#07111F]">Professional Consultation</p>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">A professional consultation based on your specific goals and needs.</p>
-                        </div>
+                  <CardContent className="p-6">
+                    <div className="space-y-4 text-slate-800">
+                      <div className="flex gap-3">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
+                        <p><span className="font-black text-[#07111F]">Professional consultation</span> based on your specific goals.</p>
                       </div>
-                      <div className="flex gap-4">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
-                        <div>
-                          <p className="font-black text-[#07111F]">Clear Recommendations</p>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">Clear, actionable recommendations for your next steps.</p>
-                        </div>
+                      <div className="flex gap-3">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
+                        <p><span className="font-black text-[#07111F]">Clear recommendations</span> for your next steps.</p>
                       </div>
-                      <div className="flex gap-4">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={24} />
-                        <div>
-                          <p className="font-black text-[#07111F]">Comprehensive Support</p>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">Support for ecommerce, AI, logistics, safety, business, or credit needs.</p>
-                        </div>
+                      <div className="flex gap-3">
+                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
+                        <p><span className="font-black text-[#07111F]">Comprehensive support</span> for ecommerce, AI, logistics, safety, business, or credit needs.</p>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="overflow-hidden border border-slate-200 bg-white shadow-2xl">
-                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-5 text-white">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl border border-[#D4AF37]/60 bg-[#D4AF37]/10">
-                      <MessageCircle className="text-[#D4AF37]" size={28} />
-                    </div>
-                    <h3 className="text-xl font-black uppercase tracking-wide">Need Help Booking?</h3>
+                <Card className="mt-5 overflow-hidden border border-slate-200 bg-white shadow-xl">
+                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
+                    <MessageCircle className="text-[#D4AF37]" size={28} />
+                    <h3 className="text-lg font-black uppercase tracking-wide">Need Help Booking?</h3>
                   </div>
-                  <CardContent className="p-7">
+                  <CardContent className="p-6">
                     <p className="text-base font-medium leading-7 text-slate-700">
                       You can also reach us directly by phone, WhatsApp, or email.
                     </p>
@@ -325,33 +315,30 @@ export default function App() {
                       <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
                         Chat on WhatsApp
                       </LinkButton>
-                      <LinkButton href={EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-bold text-[#07111F] hover:bg-slate-100 shadow-sm">
+                      <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-[#07111F] hover:bg-slate-100">
                         Email Us
                       </LinkButton>
                     </div>
                   </CardContent>
                 </Card>
-              </div>
 
-              <div className="rounded-[2rem] border border-[#D4AF37] bg-[#07111F] p-4 shadow-2xl">
+                <div className="mt-5 rounded-3xl border border-[#D4AF37]/30 bg-[#FFF8E1] p-5 text-[#07111F] shadow-md">
+                  <p className="font-bold">Prefer to speak with us directly?</p>
+                  <a href={`tel:${PHONE}`} className="mt-1 block text-xl font-black hover:text-[#B8860B]">+1 (786) 762-5663</a>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, x: 24 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.7 }}
+                className="rounded-[2rem] border-2 border-[#D4AF37] bg-[#07111F] p-4 shadow-2xl"
+              >
                 <div className="rounded-[1.5rem] bg-white p-3">
                   <CalendlyEmbed />
                 </div>
-              </div>
-            </div>
-
-            <div className="mt-10 grid gap-5 md:grid-cols-4">
-              {[
-                ["Secure & Confidential", "Your information is safe and protected."],
-                ["Flexible Scheduling", "Choose a time that works best for you."],
-                ["Expert Guidance", "Get personalized advice from business-focused support."],
-                ["Results Focused", "We focus on strategies that drive real results."],
-              ].map(([title, body]) => (
-                <div key={title} className="rounded-3xl border border-slate-200 bg-white p-5 shadow-lg">
-                  <p className="font-black text-[#07111F]">{title}</p>
-                  <p className="mt-2 text-sm leading-6 text-slate-600">{body}</p>
-                </div>
-              ))}
+              </motion.div>
             </div>
           </div>
         </section>
@@ -376,7 +363,10 @@ export default function App() {
               <div className="space-y-4 text-slate-200">
                 <a href={`tel:${PHONE}`} className="flex items-center gap-3 hover:text-[#D4AF37]"><Phone size={20} className="text-[#D4AF37]" /> +1 786 762 5663</a>
                 <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="flex items-center gap-3 hover:text-[#D4AF37]"><MessageCircle size={20} className="text-[#D4AF37]" /> WhatsApp: +1 786 762 5663</a>
-                <a href={EMAIL_URL} className="flex items-center gap-3 hover:text-[#D4AF37]"><Mail size={20} className="text-[#D4AF37]" /> info@jleefantasy.com</a>
+                <a href={EMAIL_URL} className="flex items-center gap-3 hover:text-yellow-400"><Mail size={20} className="text-yellow-400" /> info@jleefantasy.com</a>
+                <a href={BOOKING_EMAIL_URL} className="flex items-center gap-3 hover:text-yellow-400"><Mail size={20} className="text-yellow-400" /> bookings@jleefantasy.com</a>
+                <a href={SUPPORT_EMAIL_URL} className="flex items-center gap-3 hover:text-yellow-400"><Mail size={20} className="text-yellow-400" /> support@jleefantasy.com</a>
+                <div className="flex items-center gap-3"><CreditCard size={20} className="text-yellow-400" /> billing@jleefantasy.com</div>
                 <div className="flex items-center gap-3"><MapPin size={20} className="text-[#D4AF37]" /> 137 N Olympic Ave, Arlington, WA</div>
                 <div className="rounded-3xl bg-white/10 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
                 <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="bg-white text-slate-950 hover:bg-slate-100">Email Us</LinkButton></div>
