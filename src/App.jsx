@@ -42,18 +42,14 @@ function CardContent({ children, className = "" }) {
 }
 function LinkButton({ href, children, className = "", variant = "default", external = false }) {
   const base =
-    "inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-black transition focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2";
-  const variantClass =
-    variant === "outline"
-      ? "border-2 border-[#07111F] bg-white text-black hover:bg-slate-100"
-      : "bg-[#07111F] text-white hover:bg-[#0B2A55]";
+    "inline-flex items-center justify-center gap-2 rounded-2xl border-2 border-[#D4AF37] bg-[#07111F] px-6 py-3 text-sm font-black text-white shadow-md transition-all duration-300 hover:border-[#E6C35C] hover:bg-[#0B2A55] hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2";
 
   return (
     <a
       href={href}
       target={external ? "_blank" : undefined}
       rel={external ? "noreferrer" : undefined}
-      className={`${base} ${variantClass} ${className}`}
+      className={`${base} ${className}`}
     >
       {children}
     </a>
@@ -135,10 +131,10 @@ export default function App() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <LinkButton href={EMAIL_URL} className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
+            <LinkButton href={EMAIL_URL} className="px-6 py-4"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
             <LinkButton
               href="#booking"
-              className="bg-[#D4AF37] px-6 py-4 font-black text-[#07111F] hover:bg-[#C9A227]"
+              className="px-6 py-4"
             >
               <CalendarDays className="mr-2" size={18} /> Book Consultation
             </LinkButton>
@@ -158,8 +154,8 @@ export default function App() {
               <h1 className="text-4xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">Helping people and businesses grow through coaching, training, ecommerce, and smart solutions.</h1>
               <p className="mt-6 max-w-xl text-lg leading-8 text-slate-700">J-LEE FANTASY SERVICES LLC provides business coaching, logistics support, ecommerce guidance, AI certification, workplace safety training, credit management, and more.</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <LinkButton href="#booking" className="bg-blue-700 px-7 py-6 text-base hover:bg-blue-800">Book an Appointment <ArrowRight className="ml-2" size={18} /></LinkButton>
-                <LinkButton href="#services" variant="outline" className="px-7 py-6 text-base">Explore Services</LinkButton>
+                <LinkButton href="#booking" className="px-7 py-6">Book an Appointment <ArrowRight className="ml-2" size={18} /></LinkButton>
+                <LinkButton href="#services" variant="outline" className="px-7 py-6">Explore Services</LinkButton>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, scale: 0.95 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.7, delay: 0.1 }}>
@@ -225,8 +221,8 @@ export default function App() {
                 <h2 className="mt-2 text-3xl font-black md:text-4xl">Learn AI. Earn certificates. Build future-ready skills.</h2>
                 <p className="mt-4 text-slate-200">The AI Academy will offer video courses, quizzes, certifications, and private member access designed for students, entrepreneurs, workers, and business owners.</p>
                 <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                  <LinkButton href={EMAIL_URL} className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Request Course Info</LinkButton>
-                  <LinkButton href={WHATSAPP_URL} external className="bg-white text-slate-950 hover:bg-slate-100">Chat on WhatsApp</LinkButton>
+                  <LinkButton href={EMAIL_URL} className="">Request Course Info</LinkButton>
+                  <LinkButton href={WHATSAPP_URL} external className="">Chat on WhatsApp</LinkButton>
                 </div>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
@@ -253,7 +249,7 @@ export default function App() {
                   <Store className="mb-5 text-[#D4AF37]" size={48} />
                   <h3 className="text-2xl font-black">Product Showcase Coming Soon</h3>
                   <p className="mt-3 text-slate-200">Featured products, courses, and service packages will appear here.</p>
-                  <LinkButton href="#pricing" className="mt-6 bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">View Service Packages</LinkButton>
+                  <LinkButton href="#pricing" className="mt-6">View Service Packages</LinkButton>
                 </CardContent>
               </Card>
             </div>
@@ -345,10 +341,10 @@ export default function App() {
                     You can also reach us directly by phone, WhatsApp, or email.
                   </p>
                   <div className="mt-5 flex flex-col gap-3">
-                    <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
+                    <LinkButton href={WHATSAPP_URL} external className="w-full">
                       Chat on WhatsApp
                     </LinkButton>
-                    <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
+                    <LinkButton href={BOOKING_EMAIL_URL} className="w-full"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
                   </div>
                 </CardContent>
               </Card>
@@ -402,7 +398,7 @@ export default function App() {
                 <div className="flex items-center gap-3"><CreditCard size={20} className="text-yellow-400" /> billing@jleefantasy.com</div>
                 <div className="flex items-center gap-3"><MapPin size={20} className="text-[#D4AF37]" /> 137 N Olympic Ave, Arlington, WA</div>
                 <div className="rounded-3xl bg-white/10 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
-                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton></div>
+                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="px-6 py-4"><Mail className="mr-2" size={18} /> Email Us</LinkButton></div>
               </div>
             </div>
           </div>
