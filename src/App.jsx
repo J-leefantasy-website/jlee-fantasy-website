@@ -41,7 +41,23 @@ function CardContent({ children, className = "" }) {
   return <div className={className}>{children}</div>;
 }
 function LinkButton({ href, children, className = "", variant = "default", external = false }) {
-  return <a href={href} target={external ? "_blank" : undefined} rel={external ? "noreferrer" : undefined}><Button variant={variant} className={className}>{children}</Button></a>;
+  const base =
+    "inline-flex items-center justify-center gap-2 rounded-2xl px-5 py-3 text-sm font-black transition focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2";
+  const variantClass =
+    variant === "outline"
+      ? "border-2 border-[#07111F] bg-white text-black hover:bg-slate-100"
+      : "bg-[#07111F] text-white hover:bg-[#0B2A55]";
+
+  return (
+    <a
+      href={href}
+      target={external ? "_blank" : undefined}
+      rel={external ? "noreferrer" : undefined}
+      className={`${base} ${variantClass} ${className}`}
+    >
+      {children}
+    </a>
+  );
 }
 
 const services = [
@@ -119,12 +135,7 @@ export default function App() {
           </nav>
 
           <div className="hidden items-center gap-3 md:flex">
-            <LinkButton
-              href={EMAIL_URL}
-              className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-[#07111F] hover:bg-slate-100"
-            >
-              <Mail className="mr-2" size={18} /> Email Us
-            </LinkButton>
+            <LinkButton href={EMAIL_URL} className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
             <LinkButton
               href="#booking"
               className="bg-[#D4AF37] px-6 py-4 font-black text-[#07111F] hover:bg-[#C9A227]"
@@ -337,9 +348,7 @@ export default function App() {
                     <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
                       Chat on WhatsApp
                     </LinkButton>
-                    <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-black hover:bg-slate-100 inline-flex items-center justify-center">
-                      <Mail className="mr-2" size={18} /> Email Us
-                    </LinkButton>
+                    <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton>
                   </div>
                 </CardContent>
               </Card>
@@ -393,7 +402,7 @@ export default function App() {
                 <div className="flex items-center gap-3"><CreditCard size={20} className="text-yellow-400" /> billing@jleefantasy.com</div>
                 <div className="flex items-center gap-3"><MapPin size={20} className="text-[#D4AF37]" /> 137 N Olympic Ave, Arlington, WA</div>
                 <div className="rounded-3xl bg-white/10 p-5"><p className="font-bold text-[#D4AF37]">Official Domain</p><p className="mt-1">jleefantasy.com</p></div>
-                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="bg-white text-slate-950 hover:bg-slate-100">Email Us</LinkButton></div>
+                <div className="flex flex-col gap-3 sm:flex-row"><LinkButton href="#booking" className="bg-[#D4AF37] text-slate-950 hover:bg-[#C9A227]">Book Now</LinkButton><LinkButton href={EMAIL_URL} className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-black hover:bg-slate-100"><Mail className="mr-2" size={18} /> Email Us</LinkButton></div>
               </div>
             </div>
           </div>
