@@ -4,7 +4,12 @@ import {
   BadgeCheck, Bot, BriefcaseBusiness, CalendarDays, CheckCircle, CreditCard,
   GraduationCap, LockKeyhole, Mail, MapPin, MessageCircle, Phone, PlayCircle,
   ShieldCheck, ShoppingCart, Sparkles, Store, Truck, ArrowRight
-} from "lucide-react";
+,
+  Rocket,
+  Crown,
+  BarChart3,
+  Headphones,
+  ChevronDown} from "lucide-react";
 
 const PHONE = "+17867625663";
 const EMAIL = "info@jleefantasy.com";
@@ -91,25 +96,42 @@ function CalendlyEmbed() {
 export default function App() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white via-slate-50 to-blue-50 text-slate-950">
-      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/90 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
+      <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/95 shadow-sm backdrop-blur-xl">
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-3">
           <a href="#home" className="flex items-center gap-3">
-            <img src="/logo.png" alt="J-LEE FANTASY SERVICES LLC Logo" className="h-14 w-14 rounded-2xl object-cover shadow-lg" />
-            <div>
-              <p className="text-lg font-extrabold tracking-tight">J-LEE FANTASY SERVICES LLC</p>
-              <p className="text-xs font-medium text-slate-500">Your Vision. Our Execution.</p>
-            </div>
+            <img
+              src="/logo.png"
+              alt="J-LEE FANTASY SERVICES LLC Logo"
+              className="h-16 w-auto object-contain"
+            />
           </a>
-          <nav className="hidden items-center gap-6 text-sm font-semibold text-slate-700 lg:flex">
-            <a href="#home" className="hover:text-blue-800">Home</a>
-            <a href="#services" className="hover:text-blue-800">Services</a>
-            <a href="#academy" className="hover:text-blue-800">AI Academy</a>
-            <a href="#store" className="hover:text-blue-800">Store</a>
-            <a href="#pricing" className="hover:text-blue-800">Pricing</a>
-            <a href="#booking" className="hover:text-blue-800">Booking</a>
-            <a href="#contact" className="hover:text-blue-800">Contact</a>
+
+          <nav className="hidden items-center gap-8 text-sm font-black text-[#07111F] lg:flex">
+            <a href="#home" className="hover:text-[#B8860B]">Home</a>
+            <a href="#services" className="inline-flex items-center gap-1 hover:text-[#B8860B]">
+              Services <ChevronDown size={14} />
+            </a>
+            <a href="#academy" className="hover:text-[#B8860B]">AI Academy</a>
+            <a href="#store" className="hover:text-[#B8860B]">E-Commerce</a>
+            <a href="#pricing" className="hover:text-[#B8860B]">Pricing</a>
+            <a href="#about" className="hover:text-[#B8860B]">About</a>
+            <a href="#contact" className="hover:text-[#B8860B]">Contact</a>
           </nav>
-          <LinkButton href="#booking" className="bg-slate-950 text-white hover:bg-blue-900">Book Consultation</LinkButton>
+
+          <div className="hidden items-center gap-3 md:flex">
+            <LinkButton
+              href={EMAIL_URL}
+              className="border-2 border-[#07111F] bg-white px-6 py-4 font-black text-[#07111F] hover:bg-slate-100"
+            >
+              <Mail className="mr-2" size={18} /> Email Us
+            </LinkButton>
+            <LinkButton
+              href="#booking"
+              className="bg-[#D4AF37] px-6 py-4 font-black text-[#07111F] hover:bg-[#C9A227]"
+            >
+              <CalendarDays className="mr-2" size={18} /> Book Consultation
+            </LinkButton>
+          </div>
         </div>
       </header>
 
@@ -256,89 +278,175 @@ export default function App() {
           </div>
         </section>
 
-        <section id="booking" className="relative overflow-hidden bg-white px-6 py-20">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#FFF7DF_0%,#FFFFFF_35%,#F8FAFC_100%)]" />
+        <section id="booking" className="relative overflow-hidden bg-white px-6 py-14">
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,#FFF6D9_0%,#FFFFFF_36%,#F8FAFC_100%)]" />
+
+          <div className="mx-auto grid max-w-7xl items-start gap-10 lg:grid-cols-[0.85fr_1.7fr]">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border-2 border-[#D4AF37] bg-white px-5 py-2 text-sm font-black uppercase tracking-wide text-[#B8860B] shadow-sm">
+                <Sparkles size={16} /> Luxury Booking Experience
+              </div>
+
+              <h2 className="text-5xl font-black leading-tight tracking-tight text-[#07111F] md:text-6xl">
+                Schedule Your <span className="block text-[#D4AF37]">Consultation</span>
+              </h2>
+
+              <p className="mt-5 max-w-xl text-lg font-medium leading-8 text-slate-700">
+                Choose the best time to discuss your business vision, ecommerce goals, AI training needs,
+                logistics support, workplace safety training, or credit management plan.
+              </p>
+
+              <Card className="mt-7 overflow-hidden border border-slate-200 bg-white shadow-xl">
+                <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
+                  <CalendarDays className="text-[#D4AF37]" size={28} />
+                  <h3 className="text-lg font-black uppercase tracking-wide">What to Expect</h3>
+                </div>
+                <CardContent className="p-6">
+                  <div className="space-y-4 text-sm font-medium text-slate-800">
+                    <div className="flex gap-3">
+                      <CheckCircle className="mt-0.5 shrink-0 text-[#D4AF37]" size={20} />
+                      <p>Professional consultation based on your specific goals.</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <CheckCircle className="mt-0.5 shrink-0 text-[#D4AF37]" size={20} />
+                      <p>Clear, actionable recommendations for your next steps.</p>
+                    </div>
+                    <div className="flex gap-3">
+                      <CheckCircle className="mt-0.5 shrink-0 text-[#D4AF37]" size={20} />
+                      <p>Comprehensive support for ecommerce, AI, logistics, safety, business, or credit needs.</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card className="mt-5 overflow-hidden border border-slate-200 bg-white shadow-xl">
+                <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
+                  <Headphones className="text-[#D4AF37]" size={28} />
+                  <h3 className="text-lg font-black uppercase tracking-wide">Need Help Booking?</h3>
+                </div>
+                <CardContent className="p-6">
+                  <p className="text-base font-medium leading-7 text-slate-700">
+                    You can also reach us directly by phone, WhatsApp, or email.
+                  </p>
+                  <div className="mt-5 flex flex-col gap-3">
+                    <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
+                      Chat on WhatsApp
+                    </LinkButton>
+                    <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-black hover:bg-slate-100 inline-flex items-center justify-center">
+                      <Mail className="mr-2" size={18} /> Email Us
+                    </LinkButton>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <div className="mt-5 rounded-2xl border border-[#D4AF37]/30 bg-[#FFF8E1] p-5 text-[#07111F] shadow-sm">
+                <p className="text-sm font-medium">Prefer to speak with us directly?</p>
+                <a href={`tel:${PHONE}`} className="mt-1 block text-xl font-black hover:text-[#B8860B]">
+                  +1 (786) 762-5663
+                </a>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+              className="rounded-[2rem] border-2 border-[#D4AF37] bg-[#07111F] p-5 shadow-2xl"
+            >
+              <div className="rounded-[1.5rem] bg-white p-3">
+                <CalendlyEmbed />
+              </div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="pricing" className="bg-white px-6 pb-20 pt-4">
           <div className="mx-auto max-w-7xl">
-            <div className="grid items-start gap-10 lg:grid-cols-[0.8fr_1.4fr]">
-              <motion.div
-                initial={{ opacity: 0, x: -24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-              >
-                <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-[#D4AF37] bg-white px-5 py-2 text-sm font-black uppercase tracking-wide text-[#B8860B] shadow-sm">
-                  <Sparkles size={16} /> Luxury Booking Experience
-                </div>
+            <div className="text-center">
+              <div className="mb-3 flex items-center justify-center gap-3">
+                <span className="h-px w-16 bg-[#D4AF37]" />
+                <p className="text-xs font-black uppercase tracking-widest text-[#B8860B]">Choose the Right Solution</p>
+                <span className="h-px w-16 bg-[#D4AF37]" />
+              </div>
+              <h2 className="text-4xl font-black tracking-tight text-[#07111F] md:text-5xl">
+                Simple, Transparent Pricing
+              </h2>
+              <p className="mx-auto mt-3 max-w-2xl text-base font-medium text-slate-600">
+                Solutions designed to help your business grow and succeed.
+              </p>
+            </div>
 
-                <h2 className="text-5xl font-black leading-tight tracking-tight text-[#07111F] md:text-6xl">
-                  Schedule Your <span className="block text-[#D4AF37]">Consultation</span>
-                </h2>
-
-                <p className="mt-5 max-w-xl text-lg font-medium leading-8 text-slate-700">
-                  Choose the best time to discuss your business vision, ecommerce goals, AI training needs,
-                  logistics support, workplace safety training, or credit management plan.
-                </p>
-
-                <Card className="mt-8 overflow-hidden border border-slate-200 bg-white shadow-xl">
-                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
-                    <CalendarDays className="text-[#D4AF37]" size={28} />
-                    <h3 className="text-lg font-black uppercase tracking-wide">What to Expect</h3>
-                  </div>
-                  <CardContent className="p-6">
-                    <div className="space-y-4 text-slate-800">
-                      <div className="flex gap-3">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
-                        <p><span className="font-black text-[#07111F]">Professional consultation</span> based on your specific goals.</p>
+            <div className="mt-10 grid gap-8 lg:grid-cols-3">
+              {[
+                {
+                  name: "Starter Consultation",
+                  price: "$50",
+                  description: "Perfect for individuals and small businesses",
+                  icon: Rocket,
+                  items: ["30-minute consultation", "Personalized recommendations", "Actionable next steps", "Email support after consultation"],
+                },
+                {
+                  name: "Professional Growth",
+                  price: "$199",
+                  description: "For growing businesses and entrepreneurs",
+                  icon: BarChart3,
+                  featured: true,
+                  items: ["60-minute in-depth consultation", "Custom growth strategy", "Ecommerce & AI recommendations", "Priority email support", "Follow-up strategy session"],
+                },
+                {
+                  name: "Elite Enterprise",
+                  price: "Custom",
+                  description: "For established businesses & enterprises",
+                  icon: Crown,
+                  items: ["Custom strategy & solutions", "Dedicated account manager", "Advanced analytics & reporting", "Priority support & implementation", "Ongoing growth partnership"],
+                },
+              ].map((pkg) => {
+                const Icon = pkg.icon;
+                return (
+                  <Card
+                    key={pkg.name}
+                    className={`relative border bg-white shadow-xl transition hover:-translate-y-1 hover:shadow-2xl ${
+                      pkg.featured ? "border-2 border-[#D4AF37]" : "border-slate-200"
+                    }`}
+                  >
+                    {pkg.featured && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-[#D4AF37] px-8 py-1 text-xs font-black uppercase text-[#07111F]">
+                        Most Popular
                       </div>
-                      <div className="flex gap-3">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
-                        <p><span className="font-black text-[#07111F]">Clear recommendations</span> for your next steps.</p>
+                    )}
+                    <CardContent className="p-8">
+                      <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full bg-[#FFF3C4] text-[#D4AF37]">
+                        <Icon size={38} />
                       </div>
-                      <div className="flex gap-3">
-                        <CheckCircle className="mt-1 shrink-0 text-[#D4AF37]" size={22} />
-                        <p><span className="font-black text-[#07111F]">Comprehensive support</span> for ecommerce, AI, logistics, safety, business, or credit needs.</p>
+                      <h3 className="text-2xl font-black text-[#07111F]">{pkg.name}</h3>
+                      <p className="mt-2 text-sm font-medium leading-6 text-slate-600">{pkg.description}</p>
+                      <p className="mt-4 text-4xl font-black text-[#D4AF37]">{pkg.price}</p>
+                      <div className="mt-7 space-y-3">
+                        {pkg.items.map((item) => (
+                          <div key={item} className="flex items-start gap-3 text-sm font-medium text-[#07111F]">
+                            <CheckCircle className="mt-0.5 shrink-0 text-[#D4AF37]" size={18} />
+                            <span>{item}</span>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <Card className="mt-5 overflow-hidden border border-slate-200 bg-white shadow-xl">
-                  <div className="flex items-center gap-4 bg-[#07111F] px-6 py-4 text-white">
-                    <MessageCircle className="text-[#D4AF37]" size={28} />
-                    <h3 className="text-lg font-black uppercase tracking-wide">Need Help Booking?</h3>
-                  </div>
-                  <CardContent className="p-6">
-                    <p className="text-base font-medium leading-7 text-slate-700">
-                      You can also reach us directly by phone, WhatsApp, or email.
-                    </p>
-                    <div className="mt-5 flex flex-col gap-3">
-                      <LinkButton href={WHATSAPP_URL} external className="w-full bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]">
-                        Chat on WhatsApp
+                      <LinkButton
+                        href="#booking"
+                        className={`mt-8 w-full ${
+                          pkg.featured ? "bg-[#D4AF37] text-[#07111F] hover:bg-[#C9A227]" : "bg-[#07111F] text-white hover:bg-[#0B2A55]"
+                        }`}
+                      >
+                        Choose Package
                       </LinkButton>
-                      <LinkButton href={BOOKING_EMAIL_URL} className="w-full border-2 border-[#07111F] bg-white font-black text-[#07111F] hover:bg-slate-100">
-                        Email Us
-                      </LinkButton>
-                    </div>
-                  </CardContent>
-                </Card>
-
-                <div className="mt-5 rounded-3xl border border-[#D4AF37]/30 bg-[#FFF8E1] p-5 text-[#07111F] shadow-md">
-                  <p className="font-bold">Prefer to speak with us directly?</p>
-                  <a href={`tel:${PHONE}`} className="mt-1 block text-xl font-black hover:text-[#B8860B]">+1 (786) 762-5663</a>
-                </div>
-              </motion.div>
-
-              <motion.div
-                initial={{ opacity: 0, x: 24 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.7 }}
-                className="rounded-[2rem] border-2 border-[#D4AF37] bg-[#07111F] p-4 shadow-2xl"
-              >
-                <div className="rounded-[1.5rem] bg-white p-3">
-                  <CalendlyEmbed />
-                </div>
-              </motion.div>
+                    </CardContent>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
